@@ -1,0 +1,24 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2>List of Notes</h2>
+                <ul class="list-group"  >
+                    {% for note in notes_list %}
+                    <li class="list-group-item">  {{ note.title }} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                        <lable><a href="/note/{{ note.id }}">View</a> &emsp;&emsp;
+                               <a href="/note/{{ note.id }}/edit">Edit</a>   &emsp;&emsp;
+                                Delete &emsp;&emsp;  </lable></li>
+                    {% endfor %}
+                </ul>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form action="" method="post">
+            {% csrf_token %}
+                {% for note_desc in note.note_detail_set.all %}
+                      <div class="card" style="width: 25rem;">
+                      <div class="card-body">
+                        <h5 class="card-title">{{ note.title }}</h5>
+                        <p class="card-text">{{ note_desc.description }}</p>
+                        <a href="/note/" class="btn btn-primary"> << Back</a>
+                      </div>
+                      </div>
+                {% endfor %}
+            <br />
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
